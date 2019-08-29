@@ -45,12 +45,28 @@
 // }
 // 输出 10 10 10 10 10
 
-for(var i = 0 ; i < 10 ;i++){
-  //相当于进缓存
-  (function(j){
-    setTimeout(function(){
-      console.log(j)
-    },100*j)
-  })(i)
-}
+// for(var i = 0 ; i < 10 ;i++){
+//   //相当于进缓存
+//   (function(j){
+//     setTimeout(function(){
+//       console.log(j)
+//     },100*j)
+//   })(i)
+// }
 // 输出结果 ： 0 1 2 3 4 5 6 7 8 9
+
+class Animal {
+  move(distance:number = 0){
+    console.log(`Animal moved ${$distance}m`)
+  }
+}
+
+class Dog extends Animal{
+  bark(){
+    console.log('Woof! Woof!')
+  }
+}
+
+const dog = new Dog()
+dog.bark()
+dog.move(distance:10)
