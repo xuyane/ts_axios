@@ -55,18 +55,75 @@
 // }
 // 输出结果 ： 0 1 2 3 4 5 6 7 8 9
 
-class Animal {
+// class Animal {
+//   move(distance:number = 0){
+//     console.log(`Animal moved ${$distance}m`)
+//   }
+// }
+
+// class Dog extends Animal{
+//   bark(){
+//     console.log('Woof! Woof!')
+//   }
+// }
+
+// const dog = new Dog()
+// dog.bark()
+// dog.move(distance:10)
+
+
+class Animal{
+  name:string
+  constructor(name:string){
+    this.name = name
+  }
   move(distance:number = 0){
-    console.log(`Animal moved ${$distance}m`)
+    console.log(`${this.name} moved ${distance}m`)
   }
 }
 
-class Dog extends Animal{
-  bark(){
-    console.log('Woof! Woof!')
+class Snake extends Animal {
+  constructor(name:string){
+    super(name)
+  }
+  move(distance:number = 5){
+    console.log('Slitherin...')
+    super.move(distance)
   }
 }
 
-const dog = new Dog()
-dog.bark()
-dog.move(distance:10)
+class Horse extends Animal{
+  constructor(name:string){
+    super(name)
+  }
+  move(distance:number = 45){
+    console.log('Galloping...')
+    super.move(distance)
+  }
+}
+
+let sam = new Snake(name:'Sammy')
+let tom:Animal = new Horse(name:'Tommy')
+sam.move()
+tom.move(distance:34)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
